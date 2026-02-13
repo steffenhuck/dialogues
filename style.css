@@ -1,28 +1,28 @@
-/* style.css */
+/* ------------------------------
+   Dialogues – styles (v2)
+   ------------------------------ */
 
-/* Colors (locked for now) */
 :root{
-  --bg: #dce9f5;
+  /* Calmer, less saturated background */
+  --bg: #e9eef3;
+
   --ink: #3c4147;
   --accent: #103961;
 
   --col-max: 720px;
   --gutter: clamp(18px, 4vw, 44px);
 
-  --title-top: clamp(40px, 7vh, 84px);
-  --title-bottom: clamp(18px, 4vh, 42px);
-
+  /* Vertical rhythm */
   --entry-gap: clamp(22px, 4.5vh, 44px);
   --title-meta-gap: 10px;
 
-  --initials-col-gap: 14px; /* slightly spaced */
+  /* Initials grid spacing */
+  --initials-col-gap: 14px;
 }
 
 *{ box-sizing: border-box; }
 
-html, body{
-  height: 100%;
-}
+html, body{ height: 100%; }
 
 body{
   margin: 0;
@@ -32,9 +32,10 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Masthead */
 .masthead{
-  padding-top: var(--title-top);
-  padding-bottom: var(--title-bottom);
+  padding-top: clamp(48px, 7vh, 84px);
+  padding-bottom: 10px; /* tighter stack */
   text-align: center;
 }
 
@@ -45,22 +46,25 @@ body{
   color: var(--accent);
   font-size: clamp(34px, 4.6vw, 52px);
   line-height: 1.05;
-  letter-spacing: 0.005em;
+  letter-spacing: 0.06em; /* architectural all-caps */
 }
+
 .preamble{
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(16px, 1.6vw, 18px);
   line-height: 1.6;
-  color: rgba(60,65,71,0.82);
+  color: rgba(60,65,71,0.75); /* softer than ink */
   max-width: 520px;
-  margin: 18px auto 36px;
+  margin: 10px auto 28px; /* closer to title, closer to list */
   text-align: center;
 }
+
+/* Main column */
 .container{
   width: min(var(--col-max), calc(100% - (2 * var(--gutter))));
   margin: 0 auto;
-  padding-bottom: clamp(40px, 8vh, 90px);
+  padding-bottom: clamp(44px, 8vh, 90px);
 }
 
 .dialogue-list{
@@ -68,6 +72,7 @@ body{
   padding: 0;
 }
 
+/* Entries */
 .dialogue{
   list-style: none;
   display: flex;
@@ -84,7 +89,7 @@ body{
 .dialogue-title{
   display: inline;
   font-family: "Playfair Display", serif;
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   color: var(--ink);
   text-decoration: none;
   font-size: clamp(22px, 2.4vw, 30px);
@@ -110,10 +115,10 @@ body{
   margin-top: var(--title-meta-gap);
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(14px, 1.35vw, 16px);
+  font-size: clamp(13px, 1.25vw, 15px);
   line-height: 1.35;
-  color: var(--ink);
-  letter-spacing: 0.006em;
+  color: rgba(60,65,71,0.88);
+  letter-spacing: 0.01em;
 }
 
 /* Initials grid (authors only) */
@@ -124,10 +129,10 @@ body{
   display: grid;
   grid-template-columns: auto auto;
   column-gap: var(--initials-col-gap);
-  row-gap: 4px; /* tight vertical rhythm */
+  row-gap: 4px;
   font-size: clamp(15px, 1.6vw, 18px);
-  line-height: 1; /* compact badge */
-  margin-top: 2px; /* aligns to title top, then dips slightly */
+  line-height: 1;
+  margin-top: 2px;
   user-select: none;
 }
 
@@ -139,6 +144,5 @@ body{
   }
   .initials{
     column-gap: 12px;
-    row-gap: 4px;
   }
 }
