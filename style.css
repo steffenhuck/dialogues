@@ -55,7 +55,7 @@ body{
   font-weight: 400;
   font-size: clamp(16px, 1.6vw, 18px);
   line-height: 1.65;
-  color: rgba(60,65,71,0.72);
+  color: rgba(60,65,71,0.58);
   max-width: 560px;
   text-align: center;
 
