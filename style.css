@@ -65,10 +65,10 @@ body{
   /* KEY SPACING: closer to title, farther from list */
   margin: 12px auto 48px;
 }
-/* TEMP: force preamble spacing */
+
+}
 .preamble{
-  margin: 12px auto 88px !important;
-  outline: 2px solid rgba(255,0,0,0.25) !important;
+  margin: 12px auto 88px;
 }
 
 /* ------------------------------
