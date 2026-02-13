@@ -1,25 +1,17 @@
 /* ------------------------------
-   Dialogues – style.css (v3)
+   Dialogues – consolidated style.css
    ------------------------------ */
 
 :root{
-  /* Less bluish, more neutral "paper" */
-  --bg: #eef1f3;
-
-  --ink: #3c4147;
-  --accent: #103961;
+  --bg: #eef1f3;        /* neutral paper */
+  --ink: #3c4147;       /* main text */
+  --accent: #103961;    /* title + initials */
 
   --col-max: 720px;
   --gutter: clamp(18px, 4vw, 44px);
-
-  --entry-pad: clamp(4px, 4.2vh, 42px);
-  --title-meta-gap: 10px;
-
-  --initials-col-gap: 14px;
 }
 
 *{ box-sizing: border-box; }
-
 html, body{ height: 100%; }
 
 body{
@@ -36,18 +28,18 @@ body{
 
 .masthead{
   text-align: center;
-  padding-top: clamp(56px, 9vh, 120px);
+  padding-top: 88px;
   padding-bottom: 0;
 }
 
 .site-title{
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-weight: 700;                 /* Bold */
+  font-weight: 700;                   /* Bold */
   color: var(--accent);
-  font-size: clamp(42px, 6vw, 64px);/* Bigger */
-  line-height: 1.02;
-  letter-spacing: 0.03em;           /* reduced tracking */
+  font-size: clamp(56px, 9vw, 96px);  /* Bigger */
+  line-height: 0.98;
+  letter-spacing: 0.02em;             /* less spaced-out */
 }
 
 .preamble{
@@ -55,12 +47,10 @@ body{
   font-weight: 400;
   font-size: clamp(16px, 1.6vw, 18px);
   line-height: 1.65;
-  color: rgba(60,65,71,0.58);
+  color: rgba(60,65,71,0.58);         /* pale */
   max-width: 560px;
+  margin: 18px auto 36px;             /* tuned */
   text-align: center;
-
-  /* tighter to title, more separation from list */
-  margin: 18px auto 2px;
 }
 
 /* ------------------------------
@@ -70,7 +60,7 @@ body{
 .container{
   width: min(var(--col-max), calc(100% - (2 * var(--gutter))));
   margin: 0 auto;
-  padding-bottom: clamp(44px, 8vh, 90px);
+  padding-bottom: 80px;
 }
 
 .dialogue-list{
@@ -79,15 +69,19 @@ body{
 }
 
 /* ------------------------------
-   Entries
+   Entries – compact, serious (Mode A)
    ------------------------------ */
 
 .dialogue{
   list-style: none;
   display: flex;
   align-items: flex-start;
-  gap: clamp(18px, 3vw, 28px);
-  padding: var(--entry-pad) 0;
+  gap: 20px;
+  padding: 10px 0;     /* compact */
+}
+
+.dialogue + .dialogue{
+  margin-top: 8px;     /* subtle separation */
 }
 
 .entry{
@@ -102,11 +96,11 @@ body{
   color: var(--ink);
   text-decoration: none;
 
-  font-size: clamp(22px, 2.4vw, 30px);
+  /* slightly smaller than earlier to increase hierarchy */
+  font-size: clamp(20px, 2.1vw, 26px);
   line-height: 1.18;
-  letter-spacing: 0.002em;
 
-  /* extremely subtle underline hover */
+  /* subtle underline hover */
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-position: 0 100%;
@@ -122,10 +116,10 @@ body{
 }
 
 .meta{
-  margin-top: var(--title-meta-gap);
+  margin-top: 9px;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
-  font-size: clamp(13px, 1.25vw, 15px);
+  font-size: 14px;
   line-height: 1.35;
   color: rgba(60,65,71,0.88);
   letter-spacing: 0.01em;
@@ -142,13 +136,12 @@ body{
 
   display: grid;
   grid-template-columns: auto auto;
-  column-gap: var(--initials-col-gap);
+  column-gap: 14px;
   row-gap: 4px;
 
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: 16px;
   line-height: 1;
-
-  margin-top: 4px;
+  margin-top: 7px;
   user-select: none;
 }
 
@@ -158,19 +151,33 @@ body{
 
 @media (max-width: 520px){
   .masthead{
-    padding-top: 64px;
+    padding-top: 72px;
   }
 
   .preamble{
-    margin-bottom: 52px;
+    margin-bottom: 30px;
   }
 
   .dialogue{
     gap: 16px;
-    padding: clamp(18px, 3.6vh, 30px) 0;
+    padding: 9px 0;
+  }
+
+  .dialogue + .dialogue{
+    margin-top: 7px;
+  }
+
+  .dialogue-title{
+    font-size: 20px; /* keep readable on phones */
+  }
+
+  .meta{
+    font-size: 13px;
   }
 
   .initials{
     column-gap: 12px;
+    font-size: 15px;
+    margin-top: 6px;
   }
 }
