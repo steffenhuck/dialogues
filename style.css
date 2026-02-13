@@ -47,7 +47,16 @@ body{
   line-height: 1.05;
   letter-spacing: 0.005em;
 }
-
+.preamble{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: rgba(60,65,71,0.82);
+  max-width: 520px;
+  margin: 18px auto 36px;
+  text-align: center;
+}
 .container{
   width: min(var(--col-max), calc(100% - (2 * var(--gutter))));
   margin: 0 auto;
