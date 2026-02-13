@@ -1,5 +1,5 @@
 /* ------------------------------
-   Dialogues – consolidated style.css
+   Dialogues – consolidated style.css (tight list)
    ------------------------------ */
 
 :root{
@@ -35,11 +35,11 @@ body{
 .site-title{
   margin: 0;
   font-family: "Playfair Display", serif;
-  font-weight: 700;                   /* Bold */
+  font-weight: 700;
   color: var(--accent);
-  font-size: clamp(56px, 9vw, 96px);  /* Bigger */
+  font-size: clamp(56px, 9vw, 96px);
   line-height: 0.98;
-  letter-spacing: 0.02em;             /* less spaced-out */
+  letter-spacing: 0.02em;
 }
 
 .preamble{
@@ -47,9 +47,9 @@ body{
   font-weight: 400;
   font-size: clamp(16px, 1.6vw, 18px);
   line-height: 1.65;
-  color: rgba(60,65,71,0.58);         /* pale */
+  color: rgba(60,65,71,0.58);
   max-width: 560px;
-  margin: 18px auto 36px;             /* tuned */
+  margin: 18px auto 32px;     /* slightly tighter to list */
   text-align: center;
 }
 
@@ -69,7 +69,7 @@ body{
 }
 
 /* ------------------------------
-   Entries – compact, serious (Mode A)
+   Entries – tight, publication-like
    ------------------------------ */
 
 .dialogue{
@@ -77,11 +77,12 @@ body{
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 10px 0;     /* compact */
+  padding: 4px 0;            /* MUCH tighter */
 }
 
+/* Single, controlled separation between items */
 .dialogue + .dialogue{
-  margin-top: 8px;     /* subtle separation */
+  margin-top: 6px;
 }
 
 .entry{
@@ -96,7 +97,6 @@ body{
   color: var(--ink);
   text-decoration: none;
 
-  /* slightly smaller than earlier to increase hierarchy */
   font-size: clamp(20px, 2.1vw, 26px);
   line-height: 1.18;
 
@@ -116,7 +116,7 @@ body{
 }
 
 .meta{
-  margin-top: 9px;
+  margin-top: 8px;
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -155,20 +155,20 @@ body{
   }
 
   .preamble{
-    margin-bottom: 30px;
+    margin-bottom: 26px;
   }
 
   .dialogue{
     gap: 16px;
-    padding: 9px 0;
+    padding: 3px 0;
   }
 
   .dialogue + .dialogue{
-    margin-top: 7px;
+    margin-top: 6px;
   }
 
   .dialogue-title{
-    font-size: 20px; /* keep readable on phones */
+    font-size: 20px;
   }
 
   .meta{
