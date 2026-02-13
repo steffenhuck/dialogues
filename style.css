@@ -1,0 +1,135 @@
+/* style.css */
+
+/* Colors (locked for now) */
+:root{
+  --bg: #dce9f5;
+  --ink: #3c4147;
+  --accent: #103961;
+
+  --col-max: 720px;
+  --gutter: clamp(18px, 4vw, 44px);
+
+  --title-top: clamp(40px, 7vh, 84px);
+  --title-bottom: clamp(18px, 4vh, 42px);
+
+  --entry-gap: clamp(22px, 4.5vh, 44px);
+  --title-meta-gap: 10px;
+
+  --initials-col-gap: 14px; /* slightly spaced */
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.masthead{
+  padding-top: var(--title-top);
+  padding-bottom: var(--title-bottom);
+  text-align: center;
+}
+
+.site-title{
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-weight: 600; /* SemiBold */
+  color: var(--accent);
+  font-size: clamp(34px, 4.6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+}
+
+.container{
+  width: min(var(--col-max), calc(100% - (2 * var(--gutter))));
+  margin: 0 auto;
+  padding-bottom: clamp(40px, 8vh, 90px);
+}
+
+.dialogue-list{
+  margin: 0;
+  padding: 0;
+}
+
+.dialogue{
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(18px, 3vw, 28px);
+  padding: var(--entry-gap) 0;
+}
+
+.entry{
+  flex: 1;
+  min-width: 0;
+}
+
+.dialogue-title{
+  display: inline;
+  font-family: "Playfair Display", serif;
+  font-weight: 400; /* Regular */
+  color: var(--ink);
+  text-decoration: none;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.18;
+  letter-spacing: 0.002em;
+
+  /* extremely subtle hover underline */
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 120ms ease;
+  padding-bottom: 2px;
+}
+
+.dialogue-title:hover,
+.dialogue-title:focus-visible{
+  background-size: 100% 1px;
+  outline: none;
+}
+
+.meta{
+  margin-top: var(--title-meta-gap);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.35vw, 16px);
+  line-height: 1.35;
+  color: var(--ink);
+  letter-spacing: 0.006em;
+}
+
+/* Initials grid (authors only) */
+.initials{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--accent);
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: var(--initials-col-gap);
+  row-gap: 4px; /* tight vertical rhythm */
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1; /* compact badge */
+  margin-top: 2px; /* aligns to title top, then dips slightly */
+  user-select: none;
+}
+
+/* Mobile refinement */
+@media (max-width: 520px){
+  .dialogue{
+    gap: 16px;
+    padding: clamp(18px, 3.6vh, 30px) 0;
+  }
+  .initials{
+    column-gap: 12px;
+    row-gap: 4px;
+  }
+}
