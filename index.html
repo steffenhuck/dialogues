@@ -8,69 +8,70 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@400;600;700;400italic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-<header class="masthead">
-  <h1 class="site-title">DIALOGUES</h1>
+  <header class="masthead">
+    <h1 class="site-title">DIALOGUES</h1>
 
-  <p class="subtitle">
-    Long-form conversations in English and German.
-  </p>
+    <p class="subtitle">
+      Long-form conversations in English and German
+    </p>
 
-  <nav class="language-nav">
-    <a href="#english">English Dialogues</a>
-    <a href="#german">German Dialogues</a>
-  </nav>
-</header>
+    <nav class="language-nav" aria-label="Language navigation">
+      <div class="nav-label">Contents</div>
+      <a href="#english">English Dialogues</a>
+      <a href="#german">German Dialogues</a>
+    </nav>
+  </header>
 
-<main class="container">
+  <main class="container">
 
-  <!-- English Section -->
-  <section id="english">
+    <!-- English Section -->
+    <section id="english" aria-label="English Dialogues">
+      <ul class="dialogue-list" role="list">
 
-    <ul class="dialogue-list" role="list">
+        <li class="dialogue">
+          <div class="initials" aria-hidden="true">
+            <span>S</span><span>H</span>
+            <span>G</span><span>S</span>
+          </div>
 
-      <li class="dialogue">
-        <div class="initials" aria-hidden="true">
-          <span>S</span><span>H</span>
-          <span>G</span><span>S</span>
-        </div>
+          <div class="entry">
+            <a class="dialogue-title" href="https://steffenhuck.github.io/BCS/">
+              Saul Over But the Shouting
+            </a>
+            <div class="meta">Steffen Huck | Gordon L. Smith | 2025</div>
+          </div>
+        </li>
 
-        <div class="entry">
-          <a class="dialogue-title" href="https://steffenhuck.github.io/BCS/">
-            Saul Over But the Shouting
-          </a>
-          <div class="meta">Steffen Huck | Gordon L. Smith | 2025</div>
-        </div>
-      </li>
+        <li class="dialogue">
+          <div class="initials" aria-hidden="true">
+            <span>S</span><span>H</span>
+            <span>P</span><span>J</span>
+          </div>
 
-      <li class="dialogue">
-        <div class="initials" aria-hidden="true">
-          <span>S</span><span>H</span>
-          <span>P</span><span>J</span>
-        </div>
+          <div class="entry">
+            <a class="dialogue-title" href="https://steffenhuck.github.io/handel/">
+              Händel’s Steckenpferd
+            </a>
+            <div class="meta">Steffen Huck | Sir Peter Jonas | 2004</div>
+          </div>
+        </li>
 
-        <div class="entry">
-          <a class="dialogue-title" href="https://steffenhuck.github.io/handel/">
-            Händel’s Steckenpferd
-          </a>
-          <div class="meta">Steffen Huck | Sir Peter Jonas | 2004</div>
-        </div>
-      </li>
+      </ul>
+    </section>
 
-    </ul>
+    <!-- German Section (empty for now) -->
+    <section id="german" aria-label="German Dialogues">
+      <!-- Add German dialogues here -->
+    </section>
 
-  </section>
-
-  <!-- German Section placeholder (empty for now) -->
-  <section id="german"></section>
-
-</main>
+  </main>
 
 </body>
 </html>
