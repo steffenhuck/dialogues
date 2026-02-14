@@ -98,16 +98,18 @@ body{
   display: flex;
   align-items: flex-start;
   gap: 20px;
-  padding: 6px 0;
+  padding: 8px 0;              /* slightly increased */
 }
 
 .dialogue + .dialogue{
-  margin-top: 6px;
+  margin-top: 14px;            /* more space between dialogues */
 }
 
 .entry{
   flex: 1;
 }
+
+/* Title */
 
 .dialogue-title{
   font-family: "Playfair Display", serif;
@@ -129,14 +131,23 @@ body{
   background-size: 100% 1px;
 }
 
+/* Metadata + Ingredients */
+
 .meta{
-  margin-top: 8px;
+  margin-top: 8px;             /* space after title */
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.35;
   color: rgba(60,65,71,0.88);
   letter-spacing: 0.01em;
 }
+
+/* Tighten spacing between author line and ingredient line */
+.meta + .meta{
+  margin-top: 2px;
+}
+
+/* Initials */
 
 .initials{
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -153,7 +164,7 @@ body{
   margin-top: 7px;
 }
 
-/* Vertical pause */
+/* Vertical break */
 
 .language-break{
   height: 48px;
@@ -163,10 +174,23 @@ body{
 
 @media (max-width: 520px){
   .masthead{ padding-top: 70px; }
+
   .subtitle{ font-size: 19px; }
+
   .language-nav{ margin-bottom: 36px; }
-  .dialogue{ padding: 5px 0; gap: 16px; }
+
+  .dialogue{
+    padding: 6px 0;
+    gap: 16px;
+  }
+
+  .dialogue + .dialogue{
+    margin-top: 12px;
+  }
+
   .dialogue-title{ font-size: 20px; }
+
   .meta{ font-size: 13px; }
+
   .initials{ font-size: 15px; }
 }
