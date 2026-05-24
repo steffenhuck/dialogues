@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://steffenhuck.github.io/dialogues/sitemap_dialogues.xml
+Sitemap: https://steffenhuck.github.io/dialogues/sitemap.xml
